@@ -1,3 +1,10 @@
+// Colors
+$ruby_red: #911
+$light: #fcfcfc
+$dark: #333
+
+$margin: 2em
+
 =round-corners($amount)
   border-radius: $amount
   -moz-border-radius: $amount
@@ -8,7 +15,8 @@ html
   padding: 0
 
 body
-  background: #fcfcfc url(/images/bg.png)
+  background: $light url(/images/bg.png)
+  color: $dark
   font-family: "Palatino", "Palatino Linotype", "URW Palladio L", "Times New Roman", serif
   font-size: 14px
   line-height: 1.75
@@ -21,7 +29,7 @@ h1
   font-size: 4em
 
 a
-  color: #911
+  color: $ruby_red
   img
     outline: 0
     border: 0
@@ -39,7 +47,7 @@ a
         list-style: none
       li
         display: inline-block
-        margin-left: 1em
+        margin-left: $margin
         &:hover
           opacity: 0.9
         &:active
@@ -48,30 +56,30 @@ a
 
 
   #promo
-    margin-bottom: 2em
+    margin-bottom: $margin
     h1
       margin: 0
 
   #footer
-    margin: 2em 0
+    margin: $margin 0
 
 
 .info
-  +round-corners(10px)
-  color: #fcfcfc
-  background: #333 url(/images/bg.png)
-  padding: 15px 30px
+  +round-corners($margin/2)
+  color: $light
+  background: $dark url(/images/bg.png)
+  padding: $margin/2 $margin
 
   a
-    color: #d11
+    color: $ruby_red + #400
     &:hover
-      color: red
+      color: $ruby_red + #600
 
   ul
     list-style: square
 
     li
-      margin-left: 20px
+      margin-left: $margin
 
 span.small
   font-size: 70%
