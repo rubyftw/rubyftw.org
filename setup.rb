@@ -51,11 +51,11 @@ Frank.layouts_folder = "layouts"
 #  Just uncomment the Publish settings below and
 #  make the appropriate changes.
 #
-#  Frank.publish.host = "example.com"
-#  Frank.publish.path = "/www"
-#  Frank.publish.username = 'me'
-#  Frank.publish.password = 'secret'
-#  Frank.publish.port = 22
+Frank.publish.host = "rubyftw.org"
+Frank.publish.path = "/home/rubyftw/rubyftw.next"
+Frank.publish.username = "rubyftw"
+#Frank.publish.password = 'secret'
+Frank.publish.port = 22
 #
 
 # ----------------------
