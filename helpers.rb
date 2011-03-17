@@ -30,11 +30,27 @@ module FrankHelpers
     "#{time.strftime("%A, %B")} the #{time.strftime("%d").to_i.ordinalize}"
   end
 
-  def github_link
-    %Q(<a href="http://github.com/rubyftw"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>)
+  def link(url, content)
+    %Q(<a href="#{url}">#{content}</a>)
   end
 
-  def frank_link
+  def group_link(content)
+    link "http://groups.google.com/group/rubyftw", content
+  end
+
+  def github_link(content)
+    link "https://github.com/rubyftw", content
+  end
+
+  def twitter_link(content)
+    link "http://twitter.com/rubyftw", content
+  end
+
+  def fork_me
+    github_link %Q(<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub">)
+  end
+
+  def frank
     %Q(Powered by <a href="http://github.com/blahed/frank">Frank</a>.)
   end
 end

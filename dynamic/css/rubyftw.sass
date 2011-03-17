@@ -3,8 +3,6 @@ $ruby_red: #911
 $light: #fcfcfc
 $dark: #333
 
-$margin: 2em
-
 =round-corners($amount)
   border-radius: $amount
   -moz-border-radius: $amount
@@ -28,11 +26,17 @@ h1
   @extend .heading
   font-size: 4em
 
+h2
+  @extend .heading
+
 a
   color: $ruby_red
   img
     outline: 0
     border: 0
+
+p
+  margin: 0.5em 0
 
 #wrapper
   width: 800px
@@ -47,7 +51,7 @@ a
         list-style: none
       li
         display: inline-block
-        margin-left: $margin
+        margin-left: 1em
         &:hover
           opacity: 0.9
         &:active
@@ -56,19 +60,22 @@ a
 
 
   #promo
-    margin-bottom: $margin
+    margin-bottom: 2em
     h1
       margin: 0
 
   #footer
-    margin: $margin 0
+    margin: 2em 0
 
+.callout
+  font-size: 2em
+  font-style: italic
 
 .info
-  +round-corners($margin/2)
+  +round-corners(1em)
   color: $light
   background: $dark url(/images/bg.png)
-  padding: $margin/2 $margin
+  padding: 1em 2em
 
   a
     color: $ruby_red + #400
@@ -77,12 +84,10 @@ a
 
   ul
     list-style: square
-
-    li
-      margin-left: $margin
+    padding-left: 3em
 
 span.small
-  font-size: 70%
+  font-size: 0.75em
 
 .centered
   text-align: center
