@@ -37,4 +37,20 @@ namespace :site do
     system %Q(ssh rubyftw@rubyftw.org "rm -rf /home/rubyftw/rubyftw.last 2>/dev/null; mv -f /home/rubyftw/rubyftw.org /home/rubyftw/rubyftw.last 2>/dev/null; mv -f /home/rubyftw/rubyftw.next /home/rubyftw/rubyftw.org")
     puts "Done!"
   end
+
+  desc "Pull updates from github and rebuild site, runs from cron every 30 mins"
+  task :update do
+    if `git pull` !~ /up-to-date/
+      Rake::Task["site:export"].invoke
+      if File.exist?("live/index.html")
+        if File.exist?("/home/rubyftw/rubyftw.next")
+          system %Q(rm -rf /home/rubyftw/rubyftw.next)
+        end
+        if File.exist?("/home/rubyftw/rubyftw.last")
+          system %Q(rm -rf /home/rubyftw/rubyftw.last)
+        end
+        system %Q(mv -f /home/rubyftw/rubyftw.org /home/rubyftw/rubyftw.last && mv -f live /home/rubyftw/rubyftw.org)
+      end
+    end
+  end
 end
