@@ -1,7 +1,6 @@
 require "rake/rdoctask"
 
 task :default => [:site]
-desc "Export site to live/ directory"
 task :site => "site:default"
 
 namespace :setup do
@@ -15,7 +14,12 @@ namespace :setup do
 end
 
 namespace :site do
-  task :default => [:export]
+  task :default => [:hack]
+
+  desc "Start a server on port 3601"
+  task :hack => "setup:default" do
+    exec "bundle exec frank server"
+  end
 
   desc "Exports site to live/ directory"
   task :export => "setup:default" do

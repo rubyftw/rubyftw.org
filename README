@@ -1,1 +1,12 @@
-Simple site using frank (https://github.com/blahed/frank) for Ruby FTW, see in action at http://rubyftw.org/ .
+Simple site using frank (https://github.com/blahed/frank) for http://rubyftw.org
+
+$ rake -T
+rake setup:bundler  # Checks bundle and installs anything missing
+rake site:export    # Exports site to live/ directory
+rake site:hack      # Start a server on port 3601
+rake site:publish   # Exports site to live dir and publishes changes to live site
+
+Clone the project and type rake to start a web server on port 3601 and open your
+browser up to http://localhost:3601 then hack away at the files and watch the
+evolution of the site from your browser. 
+
