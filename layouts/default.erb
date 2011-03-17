@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html> 
+  <head> 
+    <title><%= title %></title> 
+    <link href='/css/rubyftw.css' rel='stylesheet' type='text/css' /> 
+  </head> 
+  <body> 
+    <div id="wrapper">
+      <div id="header"> 
+        <%= github_link %>
+        <h1>
+          <img src="/images/rubyftw_sm.png" alt="RubyFTW Logo"/>  
+          Ruby Enthusiasts of Fort Worth
+        </h1>
+      </div> 
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
+  </body> 
+</html> 

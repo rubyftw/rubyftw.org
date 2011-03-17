@@ -1,0 +1,78 @@
+=round-corners($amount)
+  border-radius: $amount
+  -moz-border-radius: $amount
+  -webkit-border-radius: $amount
+
+body
+  color: #222
+  font-family: Helvetica, Arial
+  font-size: 14px
+  line-height: 20px
+  width: 100%
+
+h1
+  margin: 0 0 10px
+  font: bold 36px Georgia
+h2
+  margin: 0
+  font-size: 24px
+  line-height: 32px
+  color: #cecece
+
+em
+  color: #4D9EEF
+  font-family: Inconsolata, Monaco, monospace
+  font-style: normal
+
+  
+#wrapper
+  width: 800px
+  margin: 0px auto
+  
+  #header
+    +round_corners(10px)
+    width: 100%
+    height: 115px
+    margin: 0 auto 10px
+    background: #911
+    color: white
+    border: 5px solid silver
+    
+    h1
+      margin-top: 15px
+      width: 100%
+      border-top: 5px solid silver
+      border-bottom: 5px solid silver
+      color: #000
+      background: #fff
+    img
+      margin: 5px
+      vertical-align: top
+
+.info
+  +round_corners(10px)
+  border: 5px solid #911
+  background-color: silver
+  padding: 5px
+  font-size: 18px
+  text-align: left
+
+  ul
+    list-style: square
+    font-size: 18px
+    line-height: 150%
+    font-weight: bold
+
+    li
+      margin-left: 20px
+
+  p
+    margin: 0
+
+span.small
+  font-size: 70%
+  
+
+.centered
+  text-align: center
+
