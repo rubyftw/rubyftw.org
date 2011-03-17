@@ -27,7 +27,7 @@ module FrankHelpers
 
   def next_meeting
     time = schedule.next_occurrence
-    "#{time.strftime("%A %B")} the #{time.strftime("%d").to_i.ordinalize}"
+    "#{time.strftime("%A, %B")} the #{time.strftime("%d").to_i.ordinalize}"
   end
 
   def github_link
