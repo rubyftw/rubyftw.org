@@ -41,7 +41,7 @@ namespace :site do
   desc "Pull updates from github and rebuild site, runs from cron every 30 mins"
   task :update do
     puts "Checking for updates from github.."
-    if `git pull` !~ /up-to-date/
+    if `git pull` !~ /up-to-date/ or ENV['FORCE']
       puts "  Great, new stuff!"
       Rake::Task["site:export"].invoke
       if File.exist?("live/index.html")
@@ -52,7 +52,7 @@ namespace :site do
           system %Q(rm -rf /home/rubyftw/rubyftw.last)
         end
         system %Q(mv -f /home/rubyftw/rubyftw.org /home/rubyftw/rubyftw.last && mv -f live /home/rubyftw/rubyftw.org)
-        puts " site replaced"
+	      puts " site replaced"
       end
     else
       puts "Nothing new.."
