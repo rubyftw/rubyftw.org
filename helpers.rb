@@ -38,8 +38,10 @@ module FrankHelpers
     link "http://groups.google.com/group/rubyftw", content
   end
 
-  def github_link(content = "github")
-    link "https://github.com/rubyftw", content
+  def github_link(content = "github", options = {})
+    options = ({:user => 'rubyftw', :repo => nil}).merge(options)
+    path = [options[:user],options[:repo]].join('/')
+    link "https://github.com/#{path}", content
   end
 
   def twitter_link(content = "twitter")
@@ -58,7 +60,7 @@ module FrankHelpers
     html = %Q(<ul class="members">\n)
     HTTParty.get('http://github.com/api/v2/json/repos/show/rubyftw/rubyftw.org/watchers?full=1').parsed_response["watchers"].each do |watcher|
       unless watcher["login"] == 'rubyftw'
-        html << %Q(<li><a href="https://github.com/#{watcher["login"]}"><img src="https://secure.gravatar.com/avatar/#{watcher["gravatar_id"]}?s=48" /></a></li>)
+        html << "<li>#{github_link %Q(<img src="https://secure.gravatar.com/avatar/#{watcher["gravatar_id"]}?s=48" alt="#{watcher["login"]}" title="#{watcher["name"]}"/>), :user => watcher["login"]}</a></li>"
       end
     end
     html << %Q(</ul>)
