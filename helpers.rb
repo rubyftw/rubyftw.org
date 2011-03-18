@@ -58,7 +58,7 @@ module FrankHelpers
 
   def member_list
     html = %Q(<ul class="members">\n)
-    HTTParty.get('http://github.com/api/v2/json/repos/show/rubyftw/rubyftw.org/watchers?full=1').parsed_response["watchers"].each do |watcher|
+    HTTParty.get('http://github.com/api/v2/json/repos/show/rubyftw/rubyftw.org/watchers?full=1').parsed_response["watchers"].sort{|w,x| w["login"] <=> x["login"] }.each do |watcher|
       unless watcher["login"] == 'rubyftw'
         html << "<li>#{github_link %Q(<img src="https://secure.gravatar.com/avatar/#{watcher["gravatar_id"]}?s=48" alt="#{watcher["login"]}" title="#{watcher["name"]}"/>), :user => watcher["login"]}</a></li>"
       end
