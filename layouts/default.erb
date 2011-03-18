@@ -4,28 +4,12 @@
     <title><%= title %></title>
     <link href='/css/rubyftw.css' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Arvo:bold,bolditalic' rel='stylesheet' type='text/css'>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-1260172-7']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
+    <%= render_partial 'analytics' %>
   </head>
   <body>
     <div id="wrapper">
       <div id="header">
-        <%= fork_me %>
-        <ul id="social_links">
-          <li><%= group_link %Q(<img src="/images/google.png" alt="Google Group">) %></li>
-          <li><%= twitter_link %Q(<img src="/images/twitter.png" alt="Twitter">) %></li>
-          <li><%= github_link %Q(<img src="/images/github.png" alt="GitHub">) %></li>
-        </ul>
-        <h1><img src="/images/rubyftw_sm.png" alt="RubyFTW: Ruby Enthusiasts of Fort Worth"/></h1>
+        <%= render_partial 'header' %>
       </div>
       <div id="main">
         <%= yield %>
