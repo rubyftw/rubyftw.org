@@ -53,7 +53,7 @@ module FrankHelpers
   end
 
   def frank
-    "Powered by #{github_link "Frank", :user => 'blahed', :repo => 'frank'}"
+    "Powered by #{github_link "Frank", :user => 'blahed', :repo => 'frank'}."
   end
 
   def member_list
