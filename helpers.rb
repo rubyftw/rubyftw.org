@@ -40,7 +40,7 @@ module FrankHelpers
 
   def github_link(content = "github", options = {})
     options = ({:user => 'rubyftw', :repo => nil}).merge(options)
-    path = [options[:user],options[:repo]].join('/')
+    path = [options[:user],options[:repo]].join('/').sub(/\/$/,'')
     link "https://github.com/#{path}", content
   end
 
