@@ -53,4 +53,14 @@ module FrankHelpers
   def frank
     %Q(Powered by <a href="http://github.com/blahed/frank">Frank</a>.)
   end
+
+  def member_list
+    html = %Q(<ul class="members">\n)
+    HTTParty.get('http://github.com/api/v2/json/repos/show/rubyftw/rubyftw.org/watchers?full=1').parsed_response["watchers"].each do |watcher|
+      unless watcher["login"] == 'rubyftw'
+        html << %Q(<li><a href="https://github.com/#{watcher["login"]}"><img src="https://secure.gravatar.com/avatar/#{watcher["gravatar_id"]}?s=48" /></a></li>)
+      end
+    end
+    html << %Q(</ul>)
+  end
 end

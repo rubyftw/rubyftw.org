@@ -9,5 +9,6 @@ gem "frank"
 gem "ice_cube"
 gem "i18n"
 gem "activesupport"
+gem 'httparty'
 
 
