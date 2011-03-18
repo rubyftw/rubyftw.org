@@ -34,15 +34,15 @@ module FrankHelpers
     %Q(<a href="#{url}">#{content}</a>)
   end
 
-  def group_link(content)
+  def group_link(content = "group")
     link "http://groups.google.com/group/rubyftw", content
   end
 
-  def github_link(content)
+  def github_link(content = "github")
     link "https://github.com/rubyftw", content
   end
 
-  def twitter_link(content)
+  def twitter_link(content = "twitter")
     link "http://twitter.com/rubyftw", content
   end
 
