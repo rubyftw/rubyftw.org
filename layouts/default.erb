@@ -5,18 +5,17 @@
     <link href='/css/rubyftw.css' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Arvo:bold,bolditalic' rel='stylesheet' type='text/css'>
     <%= render_partial 'analytics' %>
+    <%= refresh %>
   </head>
   <body>
-    <div id="wrapper">
-      <div id="header">
-        <%= render_partial 'header' %>
-      </div>
-      <div id="main">
-        <%= yield %>
-      </div>
-      <div id="footer">
-        Powered by <%= github_link "Frank", :user => 'blahed', :repo => 'frank' %>.
-      </div>
+    <div id="header">
+      <%= render_partial 'header' %>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      Powered by <%= github_link "Frank", :user => 'blahed', :repo => 'frank' %>.
     </div>
   </body>
   <!-- Generated: <%= Time.now %> -->

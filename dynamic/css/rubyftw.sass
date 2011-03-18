@@ -11,14 +11,17 @@ $dark: #333
 html
   margin: 0
   padding: 0
+  background: $light url(/images/bg.png)
 
 body
-  background: $light url(/images/bg.png)
   color: $dark
   font-family: "Palatino", "Palatino Linotype", "URW Palladio L", "Times New Roman", serif
   font-size: 14px
   line-height: 1.75
   text-rendering: optimizeLegibility
+  width: 800px
+  margin: 0px auto
+  padding: 0
 
 .heading
   font-family: "Arvo", Rockwell, serif
@@ -39,46 +42,28 @@ a
 p
   margin: 0.5em 0
 
-#wrapper
-  width: 800px
-  margin: 0px auto
-  padding: 0
+#header
+  #social_links
+    float: right
 
-  #header
-    #social_links
-      float: right
-
-      ul
-        list-style: none
-      li
-        display: inline-block
-        margin-left: 1em
-        &:hover
-          opacity: 0.9
-        &:active
-          position: relative
-          top: 2px
-
-
-  #promo
-    margin-bottom: 2em
-    h1
-      margin: 0
-
-  #footer
-    margin: 2em 0
-
-  ul.members
-    list-style: none
-    padding: 0
+    ul
+      list-style: none
     li
       display: inline-block
-      line-height: 0
-      margin: 0
-      opacity: 0.75
-      padding: 0
+      margin-left: 1em
       &:hover
-        opacity: 1
+        opacity: 0.9
+      &:active
+        position: relative
+        top: 2px
+
+#promo
+  margin-bottom: 2em
+  h1
+    margin: 0
+
+#footer
+  margin: 2em 0
 
 .callout
   font-size: 2em
@@ -98,6 +83,19 @@ p
   ul
     list-style: square
     padding-left: 2em
+
+    &.members
+      list-style: none
+      padding: 0
+      li
+        display: inline-block
+        line-height: 0
+        margin: 0
+        opacity: 0.75
+        padding: 0
+        &:hover
+          opacity: 1
+
 
 span.small
   font-size: 0.75em
