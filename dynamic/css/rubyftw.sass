@@ -46,6 +46,16 @@ a
 p
   margin: 0.5em 0
 
+.box
+  +round-corners(1em)
+  color: $light
+  background: $dark url(/images/bg.png)
+  padding: 1em 2em
+  a
+    color: #9ACD32
+    &:hover
+      color: $ruby_red + #600
+
 #header
   #fork_me
     position: absolute
@@ -79,15 +89,7 @@ p
   font-style: italic
 
 .info
-  +round-corners(1em)
-  color: $light
-  background: $dark url(/images/bg.png)
-  padding: 1em 2em
-
-  a
-    color: #9ACD32
-    &:hover
-      color: $ruby_red + #600
+  @extend .box
 
   ul
     list-style: square
