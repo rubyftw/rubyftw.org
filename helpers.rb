@@ -1,9 +1,4 @@
-require 'ice_cube'
-require 'active_support/core_ext'
-#require 'active_support/core_ext/integer/inflections'
-
-module FrankHelpers
-  # helpers go here
+module Helpers
   def title
     "Ruby FTW"
   end
