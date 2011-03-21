@@ -5,10 +5,9 @@
 
 source "http://rubygems.org"
 
-gem "frank"
-gem "ice_cube"
-gem "i18n"
-gem "activesupport"
+gem "activesupport", :require => 'active_support/core_ext'
 gem 'httparty'
-
-
+gem "i18n"
+gem "ice_cube"
+gem 'sass'
+gem 'sinatra', '>= 1.2.1'

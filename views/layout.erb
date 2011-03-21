@@ -3,12 +3,11 @@
   <head>
     <title><%= title %></title>
     <link href='/css/rubyftw.css' rel='stylesheet' type='text/css' />
-    <%= render_partial 'analytics', :code => "UA-1260172-7" %>
-    <%= refresh %>
+    <%= erb :_analytics %>
   </head>
   <body>
     <div id="header">
-      <%= render_partial 'header' %>
+      <%= erb :_header %>
     </div>
     <div id="main">
       <%= yield %>
@@ -17,5 +16,4 @@
       Powered by <%= github_link "Frank", :user => 'blahed', :repo => 'frank' %>.
     </div>
   </body>
-  <!-- Generated: <%= Time.now %> -->
 </html>
