@@ -9,6 +9,8 @@ GEM
     ice_cube (0.6.6)
     rack (1.2.2)
     sass (3.1.0.alpha.249)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.2.1)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
@@ -23,4 +25,5 @@ DEPENDENCIES
   i18n
   ice_cube
   sass
+  shotgun
   sinatra (>= 1.2.1)
