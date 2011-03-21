@@ -1,7 +1,9 @@
-require 'app/helpers'
+require 'ruby_ftw/helpers/all'
 
 module RubyFtw
-  class App < Sinatra::Base  
+  class App < Sinatra::Base
+    set :views, File.dirname(__FILE__) + '/views'
+    
     get '/' do
       erb :index
     end
