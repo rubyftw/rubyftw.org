@@ -18,7 +18,7 @@ namespace :site do
 
   desc "Start a server on port 3601"
   task :hack => "setup:default" do
-    exec "bundle exec shotgun -p 3061"
+    exec "bundle exec shotgun -p 3601"
   end
 
   desc "Pull updates from github and rebuild site, runs from cron every 30 mins"
