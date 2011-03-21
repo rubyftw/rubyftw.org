@@ -9,9 +9,9 @@ class Hookr
     if @request.params['payload']
       @response.write "Updating..."
       #system "date && cd /home/rubyftw/rubyftw.workspace && rake site:update 2>&1 |tee -a /home/rubyftw/update.log"
-      command = "cd /home/rubyftw/rubyftw.workspace && rake site:update"
+      command = "bash -lc 'cd /home/rubyftw/rubyftw.workspace && rake site:update"
       command << " FORCE=forced" if @request.params['force']
-      command << " 2>&1" 
+      command << " 2>&1'" 
       log = `#{command}`
       File.open("/home/rubyftw/update.log", "a") do |f| 
         f.puts Time.now

@@ -33,7 +33,7 @@ namespace :site do
         if File.exist?("/home/rubyftw/rubyftw.last")
           system %Q(rm -rf /home/rubyftw/rubyftw.last)
         end
-        system %Q(mv -f /home/rubyftw/rubyftw.org /home/rubyftw/rubyftw.last && mv -f live /home/rubyftw/rubyftw.org)
+        system %Q(mv -f /home/rubyftw/rubyftw.org /home/rubyftw/rubyftw.last; mv -f live /home/rubyftw/rubyftw.org)
 	      puts " site replaced"
       end
     else
