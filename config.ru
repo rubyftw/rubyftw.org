@@ -2,5 +2,5 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require 'ruby_ftw.rb'
-run RubyFtw
+require 'app/ruby_ftw'
+run RubyFtw::App
