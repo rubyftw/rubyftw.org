@@ -1,4 +1,4 @@
-require 'helpers'
+require 'helpers.rb'
 
 class RubyFtw < Sinatra::Base  
   get '/' do
