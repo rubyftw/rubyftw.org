@@ -2,10 +2,10 @@ require 'app/helpers/all'
 
 module RubyFtw
   class App < Sinatra::Base
-    set :views, ['app/layout','app/content']
+    set :views, ['app/content', 'app/css', 'app/layout']
     
     get '/css/:stylesheet.css' do
-      sass "css/#{params[:stylesheet]}".to_sym
+      sass :"#{params[:stylesheet]}"
     end
     
     get '*' do
