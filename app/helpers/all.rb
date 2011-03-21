@@ -1,11 +1,14 @@
+require 'app/helpers/github_helper'
+require 'app/helpers/gravatar_helper'
 require 'app/helpers/link_helper'
 require 'app/helpers/meeting_helper'
-require 'app/helpers/misc_helper'
 
 module RubyFtw
-  module Helpers
-    include LinkHelper
-    include MeetingHelper
-    include MiscHelper
+    module Helpers
+      HELPERS = [GravatarHelper,
+                GithubHelper,
+                LinkHelper,
+                MeetingHelper]
+      HELPERS.each{|helper| include helper }
   end
 end
