@@ -1,4 +1,4 @@
-require 'ruby_ftw/helpers/all'
+require 'app/helpers/all'
 
 module RubyFtw
   class App < Sinatra::Base
