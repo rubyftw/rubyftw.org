@@ -10,4 +10,5 @@ gem 'httparty'
 gem "i18n"
 gem "ice_cube"
 gem 'sass'
+gem 'shotgun'
 gem 'sinatra', '>= 1.2.1'
