@@ -1,9 +1,6 @@
 require 'helpers'
 
-class RubyFtw < Sinatra::Base
-  set :layout, :default
-  set :static, true
-  
+class RubyFtw < Sinatra::Base  
   get '/' do
     erb :index
   end
