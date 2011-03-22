@@ -3,13 +3,13 @@ require 'app/helpers/all'
 module RubyFtw
   class App < Sinatra::Base
     set :views, ['app/content', 'app/css', 'app/layout']
-    
+
     get '/css/:stylesheet.css' do
       sass :"#{params[:stylesheet]}"
     end
-    
+
     get '*' do
-      path = params['splat'].to_s.sub(/^\//,'').sub(/\/$/,'')      
+      path = params['splat'].to_s.gsub(/(^\/|\/$)/,'')
       if File.exists?("#{File.dirname(__FILE__)}/content/#{path}.erb")
         erb :"#{path}"
       elsif File.exists?("#{File.dirname(__FILE__)}/content/#{path}/index.erb")
@@ -18,14 +18,14 @@ module RubyFtw
         raise Sinatra::NotFound
       end
     end
-    
+
     helpers do
       include Helpers
-      
+
       def find_template(views, name, engine, &block)
         Array(views).each {|v| super(v, name, engine, &block) }
       end
     end
-    
+
   end
 end
