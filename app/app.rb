@@ -20,6 +20,10 @@ module RubyFtw
       end
     end
 
+    not_found do
+      erb :missing
+    end
+
     helpers do
       include Helpers
 
