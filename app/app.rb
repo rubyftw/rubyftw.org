@@ -4,6 +4,10 @@ module RubyFtw
   class App < Sinatra::Base
     set :views, ['app/content', 'app/css', 'app/layout']
 
+    before do
+      redirect "http://rubyftw.org#{request.path}" if request.host == "www.rubyftw.org"
+    end
+
     get '/css/:stylesheet.css' do
       sass :"#{params[:stylesheet]}"
     end
