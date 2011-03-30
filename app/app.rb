@@ -9,6 +9,7 @@ module RubyFtw
     end
 
     get '*' do
+      headers 'Cache-Control' => 'public,max-age=600'
       path = params['splat'].to_s.gsub(/(^\/|\/$)/,'')
       if File.exists?("#{File.dirname(__FILE__)}/content/#{path}.erb")
         erb :"#{path}"
