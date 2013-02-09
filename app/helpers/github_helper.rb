@@ -9,6 +9,8 @@ module RubyFtw
           end
         end
         html << %Q(</ul>\n)
+      rescue => uh_oh
+        '<ul class="members"></ul>'
       end
     end
   end
